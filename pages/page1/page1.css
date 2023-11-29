@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+body,html{
+  overflow: hidden;
+}
+
 
 .homePage {
   position: relative;
@@ -127,3 +131,9 @@
   background-color: #94e6fb;
 
 }
+
+/* .homePage img{
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+} */
