@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.homePage{
+  position: relative;
+}
+
+.homePage .nav{
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 20px;
+  right: 4%;
+}
+
+.nav a{
+  padding: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: 0.5px transparent solid;
+}
+
+.nav a:hover{
+  border: 0.5px skyblue solid;
+}
+
+.nav li{
+  list-style: none;
+}
+
+.homePage button{
+  padding: 10px;
+  border-radius: 15px;
+  position: absolute;
+  top:600px;
+  left:50%;
+  border: none;
+  background:none;
+  border: 0.5px transparent solid;
+}
+
+button a{
+  padding: 10px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.homePage button:hover{
+  border: 0.5px #94e6fb solid;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
