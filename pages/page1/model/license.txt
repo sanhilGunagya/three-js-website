@@ -1,0 +1,11 @@
+Model Information:
+* title:	Assynt, Scotland
+* source:	https://sketchfab.com/3d-models/assynt-scotland-734b5d4d66434dccb3b7dd7cd15b8b48
+* author:	Xavier Fischer - Elevation API (https://sketchfab.com/xfischer)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Assynt, Scotland" (https://sketchfab.com/3d-models/assynt-scotland-734b5d4d66434dccb3b7dd7cd15b8b48) by Xavier Fischer - Elevation API (https://sketchfab.com/xfischer) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
