@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gifuct-js": "^2.1.2",
     "parcel-bundler": "^1.12.5",
     "three": "^0.158.0"
   },
