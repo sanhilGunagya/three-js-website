@@ -9,7 +9,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Append the renderer to the content div
-document.querySelector('.content').appendChild(renderer.domElement);
+document.body.appendChild(renderer.domElement);
 
 // Light, water, and other Three.js elements
 const pointLight = new THREE.PointLight(0xffffff, 100, 500);
@@ -45,9 +45,9 @@ document.addEventListener('mousemove', onMouseMove);
 
 function onMouseMove(event) {
   const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-
   // Move content based on mouse movement
   contentElement.style.transform = `translateX(${mouseX * movementSpeed * 100}px)`;
+
 }
 
 // Orbit controls setup

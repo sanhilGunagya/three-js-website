@@ -38223,16 +38223,21 @@ var _OrbitControls = require("three/examples/jsm/controls/OrbitControls");
 var _Water = require("three/examples/jsm/objects/Water");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+// Three.js setup
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+
+// Append the renderer to the content div
 document.body.appendChild(renderer.domElement);
+
+// Light, water, and other Three.js elements
 var pointLight = new THREE.PointLight(0xffffff, 100, 500);
 pointLight.position.set(0, 3, 0);
 scene.add(pointLight);
-var watergeometry = new THREE.PlaneGeometry(10000, 10000);
-var water = new _Water.Water(watergeometry, {
+var waterGeometry = new THREE.PlaneGeometry(10000, 10000);
+var water = new _Water.Water(waterGeometry, {
   textureHeight: 512,
   textureWidth: 512,
   waterNormals: new THREE.TextureLoader().load('images/waternormals.jpg', function (texture) {
@@ -38240,29 +38245,46 @@ var water = new _Water.Water(watergeometry, {
   }),
   sunDirection: pointLight.position,
   sunColor: 0x87CEEB,
-  waterColor: 0x87CEEB,
+  waterColor: 0x00546A,
   distortionScale: 4
 });
 water.position.y = 1;
 water.rotation.x = Math.PI * -0.5;
 scene.add(water);
-update();
+
+// Your content in the HTML file
+var contentElement = document.querySelector('.content');
+
+// Variable to control content movement
+var movementSpeed = 0.1;
+
+// Mouse movement event listener
+document.addEventListener('mousemove', onMouseMove);
+function onMouseMove(event) {
+  var mouseX = event.clientX / window.innerWidth * 2 - 1;
+  // Move content based on mouse movement
+  contentElement.style.transform = "translateX(".concat(mouseX * movementSpeed * 100, "px)");
+}
+
+// Orbit controls setup
+var controls = new _OrbitControls.OrbitControls(camera, renderer.domElement);
+controls.enablePan = false;
+controls.enableZoom = false;
+
+// Set background color
+scene.background = new THREE.Color(0.1, 0.5, 0.5);
+
+// Set initial camera position
+camera.position.set(-2.5, 32, 23);
+
+// Animation update function
 function update() {
   water.material.uniforms['time'].value += 0.01;
-  requestAnimationFrame(update);
-}
-var controls = new _OrbitControls.OrbitControls(camera, renderer.domElement);
-
-// scene.background = new THREE.Color(0x87CEEB);
-scene.background = new THREE.Color(0.1, 0.5, 0.5);
-camera.position.set(-2.5, 32, 23);
-animate();
-function animate() {
   controls.update();
   renderer.render(scene, camera);
-  requestAnimationFrame(animate);
-  console.log(camera.position);
+  requestAnimationFrame(update);
 }
+update();
 },{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls":"node_modules/three/examples/jsm/controls/OrbitControls.js","three/examples/jsm/objects/Water":"node_modules/three/examples/jsm/objects/Water.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -38288,7 +38310,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51873" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52402" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
